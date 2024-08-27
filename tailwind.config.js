@@ -4,9 +4,9 @@ export default {
   theme: {
     extend: {
       colors: {
-        ["body-color"]: "var(--body-color)",
-        ["main-color"]: "var(--main-color)",
-        ["point-color"]: "var(--point-color)"
+        ["body"]: "var(--body-color)",
+        ["main"]: "var(--main-color)",
+        ["point"]: "var(--point-color)"
       },
       boxShadow: {
         ["container-shadow"]: "var(--container-shadow)"

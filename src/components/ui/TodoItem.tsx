@@ -20,7 +20,7 @@ const TodoItem = ({ item }: TodoItemProps) => {
             setChecked((prev) => !prev);
           }}
           checked={checked}
-          className="appearance-none w-[10px] h-[10px] mt-[-1px] border-solid border border-gray-300 rounded-md checked:bg-point-color checked:border-point-color"
+          className="appearance-none w-[10px] h-[10px] mt-[-1px] border-solid border border-gray-300 rounded-md checked:bg-point checked:border-point"
         />
         <span className={`font-kr pl-4 ${checked ? "text-zinc-300" : "text-zinc-600"}`}>{value}</span>
       </label>
