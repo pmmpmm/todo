@@ -1,12 +1,11 @@
-import "./App.css";
+import AppContent from "@/components/features/AppContent";
+import AppBodyLayout from "@/components/layout/AppBodyLayout";
 
 function App() {
   return (
-    <>
-      <div className="bg-amber-300">
-        <h1 className="text-3xl">Hello world!</h1>
-      </div>
-    </>
+    <AppBodyLayout>
+      <AppContent />
+    </AppBodyLayout>
   );
 }
 

@@ -1,3 +1,24 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --body-color: #f8f8fa;
+
+  --main-color: #ffffff;
+
+  --point-color: #fcb523;
+
+  --container-shadow: 0 25px 70px -12px rgba(27, 28, 31, 0.15);
+
+  --default-layout-px: 2rem;
+}
+html.dark {
+  --body-color: #323544;
+
+  --main-color: #1c1e2a;
+
+  --point-color: #6d64ed;
+
+  --container-shadow: 0 25px 70px -12px rgba(25, 28, 35, 0.4);
+}
