@@ -12,7 +12,7 @@ const TodoItem = ({ item }: TodoItemProps) => {
 
   return (
     <li className="flex items-center justify-between px-default-layout-px py-7 border-b border-gray-100 last:border-b-0">
-      <label htmlFor={id} className="flex items-center">
+      <label htmlFor={id} className="flex items-center w-full cursor-pointer">
         <input
           type="checkbox"
           name={id}
@@ -23,10 +23,10 @@ const TodoItem = ({ item }: TodoItemProps) => {
           checked={checked}
           className="appearance-none w-[10px] h-[10px] mt-[-1px] border-solid border border-gray-300 rounded-md checked:bg-point checked:border-point"
         />
-        <span className={`font-kr pl-4 ${checked ? "text-zinc-300" : "text-zinc-600"}`}>{value}</span>
+        <span className={`font-kr pl-4 ${checked ? "text-off" : "text-on"}`}>{value}</span>
       </label>
       <button className="ml-2">
-        <CgClose className={`w-5 h-5 ${checked ? "text-zinc-300" : "text-zinc-500"}`} />
+        <CgClose className={`w-5 h-5 ${checked ? "text-off" : "text-on"}`} />
       </button>
     </li>
   );

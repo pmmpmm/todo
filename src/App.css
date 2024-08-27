@@ -4,14 +4,15 @@
 
 :root {
   --body-color: #f8f8fa;
-
   --main-color: #ffffff;
-
   --point-color: #fcb523;
+
+  --text-on-color: rgb(107 114 128);
+  --text-off-color: rgb(209 213 219);
 
   --container-shadow: 0 25px 70px -12px rgba(27, 28, 31, 0.15);
 
-  --default-layout-px: 2rem;
+  --default-layout-px: 2.5rem;
 }
 html.dark {
   --body-color: #323544;
@@ -45,6 +46,21 @@ html.dark {
     src: local("Paperlogy"), url("./assets/fonts/Paperlogy-5Medium.ttf"), format("ttf");
   }
   @font-face {
+    font-family: "Paperlogy-SemiBold";
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: local("Paperlogy"), url("./assets/fonts/Paperlogy-6SemiBold.ttf"), format("ttf");
+  }
+  @font-face {
+    font-family: "Paperlogy-Bold";
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: local("Paperlogy"), url("./assets/fonts/Paperlogy-7Bold.ttf"), format("ttf");
+  }
+
+  @font-face {
     font-family: "Roboto-Regular";
     font-style: normal;
     font-weight: 400;
@@ -61,6 +77,6 @@ html.dark {
   html,
   body {
     font-family: "Paperlogy-Regular", system-ui, sans-serif;
-    @apply text-zinc-600;
+    @apply text-zinc-500;
   }
 }

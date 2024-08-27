@@ -6,7 +6,9 @@ export default {
       colors: {
         ["body"]: "var(--body-color)",
         ["main"]: "var(--main-color)",
-        ["point"]: "var(--point-color)"
+        ["point"]: "var(--point-color)",
+        ["on"]: "var(--text-on-color)",
+        ["off"]: "var(--text-off-color)"
       },
       boxShadow: {
         ["container-shadow"]: "var(--container-shadow)"
@@ -18,6 +20,8 @@ export default {
         ["paperlogy-Light"]: ["Paperlogy-Light"],
         ["paperlogy-Regular"]: ["Paperlogy-Regular"],
         ["paperlogy-Medium"]: ["Paperlogy-Medium"],
+        ["paperlogy-SemiBold"]: ["Paperlogy-SemiBold"],
+        ["paperlogy-Bold"]: ["Paperlogy-Bold"],
         ["kr"]: ["Roboto-Regular", "NotoSans-Regular"]
       }
     }
