@@ -13,6 +13,11 @@ export default {
       },
       padding: {
         ["default-layout-px"]: "var(--default-layout-px)"
+      },
+      fontFamily: {
+        ["paperlogy-Light"]: ["Paperlogy-Light"],
+        ["paperlogy-Regular"]: ["Paperlogy-Regular"],
+        ["paperlogy-Medium"]: ["Paperlogy-Medium"]
       }
     }
   },

@@ -22,3 +22,31 @@ html.dark {
 
   --container-shadow: 0 25px 70px -12px rgba(25, 28, 35, 0.4);
 }
+@layer base {
+  @font-face {
+    font-family: "Paperlogy-Light";
+    font-style: normal;
+    font-weight: 300;
+    font-display: swap;
+    src: local("Paperlogy"), url("./assets/fonts/Paperlogy-3Light.ttf"), format("ttf");
+  }
+  @font-face {
+    font-family: "Paperlogy-Regular";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: local("Paperlogy"), url("./assets/fonts/Paperlogy-4Regular.ttf"), format("ttf");
+  }
+  @font-face {
+    font-family: "Paperlogy-Medium";
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: local("Paperlogy"), url("./assets/fonts/Paperlogy-5Medium.ttf"), format("ttf");
+  }
+
+  html,
+  body {
+    font-family: "Paperlogy-Regular", system-ui, sans-serif;
+  }
+}
