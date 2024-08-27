@@ -17,7 +17,8 @@ export default {
       fontFamily: {
         ["paperlogy-Light"]: ["Paperlogy-Light"],
         ["paperlogy-Regular"]: ["Paperlogy-Regular"],
-        ["paperlogy-Medium"]: ["Paperlogy-Medium"]
+        ["paperlogy-Medium"]: ["Paperlogy-Medium"],
+        ["kr"]: ["Roboto-Regular", "NotoSans-Regular"]
       }
     }
   },
