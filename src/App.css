@@ -61,5 +61,6 @@ html.dark {
   html,
   body {
     font-family: "Paperlogy-Regular", system-ui, sans-serif;
+    @apply text-zinc-600;
   }
 }

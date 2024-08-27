@@ -1,12 +1,13 @@
-import { useState } from "react";
 import { CgClose } from "react-icons/cg";
+import { useState } from "react";
+import { TodoItemValue } from "@/domain/TodoDomain";
 
 interface TodoItemProps {
-  item: { state: boolean; id: string; value: string };
+  item: TodoItemValue;
 }
 
 const TodoItem = ({ item }: TodoItemProps) => {
-  const { state, id, value } = item;
+  const { state, value, id } = item;
   const [checked, setChecked] = useState<boolean>(state);
 
   return (
@@ -25,7 +26,7 @@ const TodoItem = ({ item }: TodoItemProps) => {
         <span className={`font-kr pl-4 ${checked ? "text-zinc-300" : "text-zinc-600"}`}>{value}</span>
       </label>
       <button className="ml-2">
-        <CgClose className={`w-5 h-5 ${checked ? "text-zinc-300" : "text-zinc-600"}`} />
+        <CgClose className={`w-5 h-5 ${checked ? "text-zinc-300" : "text-zinc-500"}`} />
       </button>
     </li>
   );

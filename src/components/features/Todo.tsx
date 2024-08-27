@@ -1,17 +1,14 @@
-import TodoItem from "../ui/TodoItem";
+import { TodoItemsDomain } from "@/domain/TodoDomain";
+import TodoItem from "@/components/ui/TodoItem";
 
-const Todo = () => {
-  const todoItems = [
-    { state: false, value: "아침 산책하기 아침 산책하기 아침 산책하기 아침 산책하기" },
-    { state: true, value: "할 일 2" },
-    { state: false, value: "할 일 3" }
-  ];
+interface TodoProps {
+  items: TodoItemsDomain;
+}
+
+const Todo = ({ items }: TodoProps) => {
   return (
     <div>
-      <ul>
-        {todoItems &&
-          todoItems.map((item, idx) => <TodoItem key={`todo-${idx}`} item={{ ...item, id: `todo-${idx}` }} />)}
-      </ul>
+      <ul>{items && items.map((item, idx) => <TodoItem key={`todo-${idx}`} item={item} />)}</ul>
     </div>
   );
 };
