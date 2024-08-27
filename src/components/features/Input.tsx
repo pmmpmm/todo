@@ -11,10 +11,12 @@ const Input = ({ onSubmit }: InputProps) => {
     onSubmit(inputValue);
     setInputValue("");
   };
-
   const handleOnChangeInput = (event: React.ChangeEvent<HTMLInputElement>) => {
     const value = event.target.value;
     setInputValue(value);
+  };
+  const handleKeyDown = (event: React.KeyboardEvent) => {
+    if (event.key === "Enter") handleOnSubmit();
   };
 
   return (
@@ -23,6 +25,7 @@ const Input = ({ onSubmit }: InputProps) => {
         <input
           type="text"
           onChange={handleOnChangeInput}
+          onKeyDown={handleKeyDown}
           value={inputValue}
           placeholder="할 일을 작성해 주세요."
           className="w-full h-9 pr-4 font-kr placeholder:text-zinc-300 focus:outline-none"
