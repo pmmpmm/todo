@@ -12,7 +12,9 @@ const AppContent = () => {
     localStorage.getItem("todo-item") as string
   ) as TodoItemsDomain;
 
-  const [itemList, setItemList] = useState<TodoItemsDomain>(localTodoItems);
+  const [itemList, setItemList] = useState<TodoItemsDomain>(
+    localTodoItems === null ? [] : localTodoItems
+  );
   const [category, setCategory] = useState<CategoryType>("all");
   const [useItemList, setUseItemList] = useState<TodoItemsDomain>([]);
   const todoBody = useRef<HTMLUListElement>(null);
@@ -23,10 +25,13 @@ const AppContent = () => {
     setItemList((prev) => [...prev, { state: false, value, id: uuidv4() }]);
     handleCategory("all");
     // 스크롤 하단 이동
-    setTimeout(() => {
-      const todoLastItem = todoBody.current?.lastElementChild as HTMLElement;
-      todoLastItem.scrollIntoView({ behavior: "smooth", block: "end", inline: "end" });
-    }, 1);
+    const todoBodyEl = todoBody.current;
+    if (todoBodyEl?.firstChild) {
+      setTimeout(() => {
+        const todoLastItem = todoBody.current?.lastElementChild as HTMLElement;
+        todoLastItem.scrollIntoView({ behavior: "smooth", block: "end", inline: "end" });
+      }, 1);
+    }
   };
 
   // 리스트 삭제
@@ -45,9 +50,12 @@ const AppContent = () => {
   // 카테고리
   const handleCategory = (category: CategoryType) => {
     setCategory(category);
-    // 스크롤 상단 이동
-    const todoFirstItem = todoBody.current?.firstElementChild as HTMLElement;
-    if (todoFirstItem) todoFirstItem.scrollIntoView({ block: "start" });
+
+    //스크롤 상단 이동
+    if (category === "active" || category === "completed") {
+      const todoFirstItem = todoBody.current?.firstElementChild as HTMLElement;
+      if (todoFirstItem) todoFirstItem.scrollIntoView({ block: "start" });
+    }
   };
 
   useEffect(() => {
