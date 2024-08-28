@@ -1,22 +1,29 @@
 import { TodoItemsDomain } from "@/domain/TodoDomain";
 import TodoItem from "@/components/ui/TodoItem";
+import { forwardRef } from "react";
 
 interface TodoProps {
   items: TodoItemsDomain;
-  setListStateUpdate: (id: string, checked: boolean) => void;
+  setItemStateUpdate: (id: string, checked: boolean) => void;
+  setItemDelete: (id: string) => void;
 }
 
-const Todo = ({ items, setListStateUpdate }: TodoProps) => {
+const Todo = forwardRef<HTMLUListElement, TodoProps>(({ items, setItemStateUpdate, setItemDelete }, ref) => {
   return (
-    <div>
-      <ul className="item-list-body min-h-[450px] max-h-[530px] overflow-auto">
-        {items &&
-          items.map((item, idx) => {
-            return <TodoItem key={`todo-${idx}`} item={item} setListStateUpdate={setListStateUpdate} />;
-          })}
-      </ul>
-    </div>
+    <ul ref={ref} className="item-list-body h-[450px] overflow-auto">
+      {items &&
+        items.map((item, idx) => {
+          return (
+            <TodoItem
+              key={`todo-${idx}`}
+              item={item}
+              setItemStateUpdate={setItemStateUpdate}
+              setItemDelete={setItemDelete}
+            />
+          );
+        })}
+    </ul>
   );
-};
+});
 
 export default Todo;
