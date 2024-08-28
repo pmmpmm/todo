@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 
 interface InputProps {
   onSubmit: (value: string) => void;
@@ -6,16 +6,21 @@ interface InputProps {
 
 const Input = ({ onSubmit }: InputProps) => {
   const [inputValue, setInputValue] = useState("");
+  const inputRef = useRef<HTMLInputElement>(null);
 
   const handleOnSubmit = () => {
     onSubmit(inputValue);
     setInputValue("");
+    inputRef.current && inputRef.current.focus();
   };
   const handleOnChangeInput = (event: React.ChangeEvent<HTMLInputElement>) => {
     const value = event.target.value;
     setInputValue(value);
   };
-  const handleKeyDown = (event: React.KeyboardEvent) => {
+  const handleKeyPress = (event: React.KeyboardEvent) => {
+    if (event.nativeEvent.isComposing) {
+      return;
+    }
     if (event.key === "Enter") handleOnSubmit();
   };
 
@@ -25,8 +30,9 @@ const Input = ({ onSubmit }: InputProps) => {
         <input
           type="text"
           onChange={handleOnChangeInput}
-          onKeyDown={handleKeyDown}
+          onKeyDown={handleKeyPress}
           value={inputValue}
+          ref={inputRef}
           placeholder="할 일을 작성해 주세요."
           className="w-full h-9 pr-4 font-kr placeholder:text-zinc-300 focus:outline-none"
         />

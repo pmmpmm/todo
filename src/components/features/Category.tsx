@@ -1,11 +1,17 @@
+import { CategoryItem, CategoryType } from "@/domain/CategoryDomain";
 import { useState } from "react";
 
-const Category = () => {
+interface CategoryProps {
+  setCategory: (category: CategoryType) => void;
+}
+
+const Category = ({ setCategory }: CategoryProps) => {
   const [activeBtn, setActiveBtn] = useState(0);
-  const categoryBtns = ["all", "active", "completed"];
+  const categoryBtns = CategoryItem;
 
   const handleOnClick = (idx: number) => {
     setActiveBtn(idx);
+    setCategory(categoryBtns[idx]);
   };
 
   return (

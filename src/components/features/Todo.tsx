@@ -3,12 +3,18 @@ import TodoItem from "@/components/ui/TodoItem";
 
 interface TodoProps {
   items: TodoItemsDomain;
+  setListStateUpdate: (id: string, checked: boolean) => void;
 }
 
-const Todo = ({ items }: TodoProps) => {
+const Todo = ({ items, setListStateUpdate }: TodoProps) => {
   return (
     <div>
-      <ul>{items && items.map((item, idx) => <TodoItem key={`todo-${idx}`} item={item} />)}</ul>
+      <ul>
+        {items &&
+          items.map((item, idx) => {
+            return <TodoItem key={`todo-${idx}`} item={item} setListStateUpdate={setListStateUpdate} />;
+          })}
+      </ul>
     </div>
   );
 };
