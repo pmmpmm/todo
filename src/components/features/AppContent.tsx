@@ -12,9 +12,7 @@ const AppContent = () => {
     localStorage.getItem("todo-item") as string
   ) as TodoItemsDomain;
 
-  const [itemList, setItemList] = useState<TodoItemsDomain>(
-    localTodoItems.length === 0 ? [] : localTodoItems
-  );
+  const [itemList, setItemList] = useState<TodoItemsDomain>(localTodoItems);
   const [category, setCategory] = useState<CategoryType>("all");
   const [useItemList, setUseItemList] = useState<TodoItemsDomain>([]);
   const todoBody = useRef<HTMLUListElement>(null);
