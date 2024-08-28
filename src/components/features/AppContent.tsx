@@ -3,14 +3,18 @@ import { useEffect, useRef, useState } from "react";
 import { TodoItemsDomain } from "@/domain/TodoDomain";
 import { CategoryType } from "@/domain/CategoryDomain";
 import Category from "@/components/features/Category";
-import Date from "@/components/features/Date";
+import DateContent from "@/components/features/DateContent";
 import Input from "@/components/features/Input";
 import Todo from "@/components/features/Todo";
 
 const AppContent = () => {
-  const localTodoItems = JSON.parse(localStorage.getItem("todo-item") as string) as TodoItemsDomain;
+  const localTodoItems = JSON.parse(
+    localStorage.getItem("todo-item") as string
+  ) as TodoItemsDomain;
 
-  const [itemList, setItemList] = useState<TodoItemsDomain>(localTodoItems.length === 0 ? [] : localTodoItems);
+  const [itemList, setItemList] = useState<TodoItemsDomain>(
+    localTodoItems.length === 0 ? [] : localTodoItems
+  );
   const [category, setCategory] = useState<CategoryType>("all");
   const [useItemList, setUseItemList] = useState<TodoItemsDomain>([]);
   const todoBody = useRef<HTMLUListElement>(null);
@@ -35,7 +39,9 @@ const AppContent = () => {
 
   //리스트 업데이트
   const handleStateUpdateItem = (id: string, checked: boolean) => {
-    setItemList((prev) => prev.map((item) => (item.id === id ? { ...item, state: checked } : item)));
+    setItemList((prev) =>
+      prev.map((item) => (item.id === id ? { ...item, state: checked } : item))
+    );
   };
 
   // 카테고리
@@ -68,7 +74,7 @@ const AppContent = () => {
 
   return (
     <div>
-      <Date />
+      <DateContent />
       <Category setCategory={handleCategory} category={category} />
       <Todo
         ref={todoBody}

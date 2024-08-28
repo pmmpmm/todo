@@ -1,6 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ["./src/**/*.{js,ts,jsx,tsx}"],
+  darkMode: "class",
   theme: {
     extend: {
       colors: {
@@ -17,12 +18,12 @@ export default {
         ["default-layout-px"]: "var(--default-layout-px)"
       },
       fontFamily: {
-        ["paperlogy-Light"]: ["Paperlogy-Light"],
-        ["paperlogy-Regular"]: ["Paperlogy-Regular"],
-        ["paperlogy-Medium"]: ["Paperlogy-Medium"],
-        ["paperlogy-SemiBold"]: ["Paperlogy-SemiBold"],
-        ["paperlogy-Bold"]: ["Paperlogy-Bold"],
-        ["kr"]: ["Roboto-Regular", "NotoSans-Regular"]
+        ["paperlogy-Light"]: ["Paperlogy-Light", "system-ui", "sans-serif"],
+        ["paperlogy-Regular"]: ["Paperlogy-Regular", "system-ui", "sans-serif"],
+        ["paperlogy-Medium"]: ["Paperlogy-Medium", "system-ui", "sans-serif"],
+        ["paperlogy-SemiBold"]: ["Paperlogy-SemiBold", "system-ui", "sans-serif"],
+        ["paperlogy-Bold"]: ["Paperlogy-Bold", "system-ui", "sans-serif"],
+        ["kr"]: ["Roboto-Regular", "NotoSans-Regular", "system-ui", "sans-serif"]
       }
     }
   },

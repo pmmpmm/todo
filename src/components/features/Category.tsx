@@ -9,7 +9,7 @@ const Category = ({ setCategory, category }: CategoryProps) => {
   const categoryBtns = CategoryItem;
 
   return (
-    <div className="px-default-layout-px border-y border-zinc-200">
+    <div className="px-default-layout-px border-y border-zinc-200 dark:border-zinc-600/80">
       <div className="flex justify-between ">
         {categoryBtns.map((btn, idx) => (
           <button
