@@ -25,7 +25,7 @@ const Input = ({ onSubmit }: InputProps) => {
   };
 
   return (
-    <div className="px-8 py-5 border-t border-zinc-200">
+    <div className="px-8 py-5 border-t border-zinc-200 bg-white">
       <div className="flex">
         <input
           type="text"

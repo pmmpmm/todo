@@ -1,11 +1,11 @@
 import { v4 as uuidv4 } from "uuid";
 import { useEffect, useState } from "react";
 import { TodoItemsDomain } from "@/domain/TodoDomain";
+import { CategoryType } from "@/domain/CategoryDomain";
 import Category from "@/components/features/Category";
 import Date from "@/components/features/Date";
 import Input from "@/components/features/Input";
 import Todo from "@/components/features/Todo";
-import { CategoryType } from "@/domain/CategoryDomain";
 
 const AppContent = () => {
   const [itemList, setItemList] = useState<TodoItemsDomain>([]);

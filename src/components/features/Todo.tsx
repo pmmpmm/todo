@@ -9,7 +9,7 @@ interface TodoProps {
 const Todo = ({ items, setListStateUpdate }: TodoProps) => {
   return (
     <div>
-      <ul>
+      <ul className="item-list-body min-h-[450px] max-h-[530px] overflow-auto">
         {items &&
           items.map((item, idx) => {
             return <TodoItem key={`todo-${idx}`} item={item} setListStateUpdate={setListStateUpdate} />;

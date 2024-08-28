@@ -79,4 +79,20 @@ html.dark {
     font-family: "Paperlogy-Regular", system-ui, sans-serif;
     @apply text-zinc-500;
   }
+
+  .item-list-body::-webkit-scrollbar {
+    @apply w-2;
+    @apply bg-transparent;
+  }
+  .item-list-body::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+  .item-list-body::-webkit-scrollbar-thumb {
+    @apply bg-zinc-200;
+    @apply w-2;
+    @apply rounded-md;
+  }
+  .item-list-body::-webkit-scrollbar-button {
+    @apply hidden;
+  }
 }
