@@ -34,7 +34,7 @@ const Input = ({ onSubmit }: InputProps) => {
           value={inputValue}
           ref={inputRef}
           placeholder="할 일을 작성해 주세요."
-          className="w-full h-9 pr-4 bg-main font-kr text-on placeholder:text-off focus:outline-none"
+          className="w-full h-9 pr-4 bg-main font-kr text-on tracking-normal placeholder:text-off focus:outline-none"
         />
         <button
           onClick={handleOnSubmit}
