@@ -11,7 +11,6 @@ const Input = ({ onSubmit }: InputProps) => {
   const handleOnSubmit = () => {
     onSubmit(inputValue);
     setInputValue("");
-    // inputRef.current && inputRef.current.focus();
   };
   const handleOnChangeInput = (event: React.ChangeEvent<HTMLInputElement>) => {
     const value = event.target.value;
