@@ -11,7 +11,7 @@
   --text-off-color: rgb(209 213 219);
 
   --container-shadow: 0 25px 70px -12px rgba(27, 28, 31, 0.15);
-
+  --scrollbar-thumb-color: rgb(228 228 231);
   --default-layout-px: 2.5rem;
 }
 html.dark {
@@ -23,6 +23,7 @@ html.dark {
   --text-off-color: #7b7b85;
 
   --container-shadow: 0 25px 70px -12px rgba(25, 28, 35, 0.4);
+  --scrollbar-thumb-color: #292b3a;
 }
 @layer base {
   @font-face {
@@ -90,9 +91,9 @@ html.dark {
     @apply bg-transparent;
   }
   .item-list-body::-webkit-scrollbar-thumb {
-    @apply bg-zinc-200;
     @apply w-2;
     @apply rounded-md;
+    background-color: var(--scrollbar-thumb-color);
   }
   .item-list-body::-webkit-scrollbar-button {
     @apply hidden;
